@@ -39,8 +39,11 @@ line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage
 #===================================================
 #   stock bot
 #===================================================
-@app.route("/callback_yangbot8", methods=['POST'])
-def callback_yangbot8():
+#@app.route("/callback_yangbot8", methods=['POST'])
+#def callback_yangbot8():
+@app.route("/callback", methods=['POST'])
+def callback():
+
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
