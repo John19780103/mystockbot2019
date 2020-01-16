@@ -34,7 +34,7 @@ channel_secret_8 = '5aa5e458031f583b300e25e1164906d8'
 channel_access_token_8 = 'Hw+z4rxRO0Gp6BzOsELuUkpgaZrAs0CS+I9eJtY4/TRNhvw4c97D6JH77kchqLg0YzWiKtIyNTGgs1gFwSQnoge6TUWfHyLEPZt1hP4cWarA0LKPE8Ix03VUexECZimJPPmgHPaFV+FOB0Oxr8qYwQdB04t89/1O/w1cDnyilFU='
 line_bot_api_8 = LineBotApi(channel_access_token_8)
 parser_8 = WebhookParser(channel_secret_8)
-line_bot_api.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text='你可以開始了'))
+line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text='你可以開始了'))
 
 #===================================================
 #   stock bot
