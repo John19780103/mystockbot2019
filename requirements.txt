@@ -9,3 +9,5 @@ emoji
 pyshorteners
 scipy
 twstock
+lxml
+matplotlib
