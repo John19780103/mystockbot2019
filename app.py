@@ -47,8 +47,8 @@ def callback():
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
-	#body = request.body.decode('utf-8')
-    body = request.get_data(as_text=True)
+    body = request.body.decode('utf-8')
+    #body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
     # parse webhook body
@@ -70,10 +70,10 @@ def callback():
 	#if isinstance(event, MessageEvent):
 		#   line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 			
-    line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f',TextSendMessage(text=event))
+    #line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f',TextSendMessage(text=event))
 	
     for event in events:
-        if isinstance(event, MessageEvent):
+        if isinstance(event, MessageEvent):		
             line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
         #if not isinstance(event.message, TextMessage):
         #    continue
