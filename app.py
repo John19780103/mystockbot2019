@@ -47,6 +47,7 @@ def callback():
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
+	#body = request.body.decode('utf-8')
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
@@ -57,11 +58,21 @@ def callback():
         abort(400)
 
     # if event is MessageEvent and message is TextMessage, then echo text
-    for event in events:
-        if not isinstance(event, MessageEvent):
-            continue
-        if not isinstance(event.message, TextMessage):
-            continue
+	
+    #for event in events:
+    #    if not isinstance(event, MessageEvent):
+    #        continue
+    #    if not isinstance(event.message, TextMessage):
+    #        continue
+	
+	 for event in events:
+            if isinstance(event, MessageEvent):
+                # 此處我們呼叫get_answer函數，從QnAMaker服務取得答案
+                #answer = get_answer(event.message.text)
+                line_bot_api_8.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text=event.message.text)
+                )
 
         text=event.message.text
         #userId = event['source']['userId']
