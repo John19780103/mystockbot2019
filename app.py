@@ -73,8 +73,9 @@ def callback():
     #line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f',TextSendMessage(text=event))
 	
     for event in events:
-        if isinstance(event, MessageEvent):		
-            line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
+        if isinstance(event, MessageEvent):
+            #line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
+			line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text=event))
         #if not isinstance(event.message, TextMessage):
         #    continue
 		
