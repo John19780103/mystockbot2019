@@ -65,14 +65,17 @@ def callback():
     #    if not isinstance(event.message, TextMessage):
     #        continue
 	
-	for event in events:
-	    if isinstance(event, MessageEvent):
-		# 此處我們呼叫get_answer函數，從QnAMaker服務取得答案
+	# 此處我們呼叫get_answer函數，從QnAMaker服務取得答案
 		#answer = get_answer(event.message.text)
-		line_bot_api_8.reply_message(
-		        event.reply_token,
-                TextSendMessage(text=event.message.text)
-            )
+	#if isinstance(event, MessageEvent):
+		#   line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
+			
+	
+    for event in events:
+        if isinstance(event, MessageEvent):
+            line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
+        #if not isinstance(event.message, TextMessage):
+        #    continue
 
         text=event.message.text
         #userId = event['source']['userId']
