@@ -70,12 +70,14 @@ def callback():
 	#if isinstance(event, MessageEvent):
 		#   line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 			
+	line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=events))
 	
     for event in events:
         if isinstance(event, MessageEvent):
             line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
         #if not isinstance(event.message, TextMessage):
         #    continue
+		
 
         text=event.message.text
         #userId = event['source']['userId']
