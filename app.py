@@ -33,7 +33,7 @@ app = Flask(__name__)
 channel_secret_8 = '5aa5e458031f583b300e25e1164906d8'
 channel_access_token_8 = 'Hw+z4rxRO0Gp6BzOsELuUkpgaZrAs0CS+I9eJtY4/TRNhvw4c97D6JH77kchqLg0YzWiKtIyNTGgs1gFwSQnoge6TUWfHyLEPZt1hP4cWarA0LKPE8Ix03VUexECZimJPPmgHPaFV+FOB0Oxr8qYwQdB04t89/1O/w1cDnyilFU='
 line_bot_api_8 = LineBotApi(channel_access_token_8)
-parser_8 = WebhookParser(channel_secret_8)
+parser = WebhookParser(channel_secret_8)
 line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text='你可以開始了'))
 
 #===================================================
@@ -53,7 +53,7 @@ def callback():
 
     # parse webhook body
     try:
-        events = parser_8.parse(body, signature)
+        events = parser.parse(body, signature)
     except InvalidSignatureError:
         abort(400)
 
@@ -74,8 +74,8 @@ def callback():
 	
     for event in events:
         if isinstance(event, MessageEvent):
-            #line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
-			line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text=event))
+            line_bot_api_8.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
+			#line_bot_api_8.push_message('Ud7ccd071b5025d5a1d5006f4e620545f', TextSendMessage(text=event))
         #if not isinstance(event.message, TextMessage):
         #    continue
 		
