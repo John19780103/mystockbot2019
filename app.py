@@ -49,11 +49,11 @@ def handle_message(event):
         #content+='現價: %s / 開盤: %s\n' %(
         #   stock_rt['realtime']['latest_trade_price'],
         #    stock_rt['realtime']['open'])
-        #content += '%s (%s) %s\n' %(
+        #content += '最高: %s / 最低: %s\n' %(
         #    stock_rt['realtime']['high'],
         #    stock_rt['realtime']['low'])
-        content += '量: %s\n' %(stock_rt['realtime']['accumulate_trade_volume'])
-            stock = twstock.Stock(text)#twstock.Stock('2330')
+        #content += '量: %s\n' %(stock_rt['realtime']['accumulate_trade_volume'])
+        #   stock = twstock.Stock(text)#twstock.Stock('2330')
         content += '-----\n'
         content += '最近五日價格: \n'
             price5 = stock.price[-5:][::-1]
