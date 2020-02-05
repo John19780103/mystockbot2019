@@ -50,10 +50,10 @@ def handle_message(event):
             stock_rt['realtime']['latest_trade_price'],
             stock_rt['realtime']['open'])
             content += '最高: %s / 最低: %s\n' %(
-                stock_rt['realtime']['high'],
-                stock_rt['realtime']['low'])
+            stock_rt['realtime']['high'],
+            stock_rt['realtime']['low'])
             content += '量: %s\n' %(stock_rt['realtime']['accumulate_trade_volume'])
-			stock = twstock.Stock(text)#twstock.Stock('2330')
+            stock = twstock.Stock(text)#twstock.Stock('2330')
             content += '-----\n'
             content += '最近五日價格: \n'
             price5 = stock.price[-5:][::-1]
@@ -61,10 +61,10 @@ def handle_message(event):
             for i in range(len(price5)):
                 #content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d %H:%M:%S"), price5[i])
                 content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d"), price5[i])
-            line_bot_api_8.reply_message(
+                line_bot_api_8.reply_message(
                 event.reply_token,
                 TextSendMessage(text=content)
-            )
+                )
 	else:
 	    reply_text = text
 	#message=TextSendMessage(text=event.message.text)
