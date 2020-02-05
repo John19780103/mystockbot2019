@@ -51,7 +51,7 @@ def handle_message(event):
 	    #my_time = my_datetime.strftime('%H:%M:%S')
 	    #my_datetime = dt.fromtimestamp(stock_rt['timestamp']+8*60*60)
 	    #my_time = my_datetime.strftime('%H:%M:%S')
-	    content += '%s (%s) %s\n' %(
+	    content += '%s (%s) \n' %(
 	        stock_rt['info']['name'],
 	        stock_rt['info']['code'])
 	    #    my_time)
