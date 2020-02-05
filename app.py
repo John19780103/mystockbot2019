@@ -37,18 +37,18 @@ def handle_message(event):
 	elif(text=="機器人"):
 	    reply_text = "叫我嗎"
 	elif(text.startswith('#')):
-	    text = text[1:]
-		#content='    '
-		stock_rt = twstock.realtime.get(text)
-		my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
-		my_time = my_datetime.strftime('%H:%M:%S')
-		content += '%s (%s) %s\n' %(
-                stock_rt['info']['name'],
-                stock_rt['info']['code'],
-                my_time)
+	    text=text[1:]
+	    #content='    '
+	    stock_rt=twstock.realtime.get(text)
+	    my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
+	    my_time = my_datetime.strftime('%H:%M:%S')
+	    content += '%s (%s) %s\n' %(
+            stock_rt['info']['name'],
+            stock_rt['info']['code'],
+            my_time)
             content += '現價: %s / 開盤: %s\n'%(
-                stock_rt['realtime']['latest_trade_price'],
-                stock_rt['realtime']['open'])
+            stock_rt['realtime']['latest_trade_price'],
+            stock_rt['realtime']['open'])
             content += '最高: %s / 最低: %s\n' %(
                 stock_rt['realtime']['high'],
                 stock_rt['realtime']['low'])
