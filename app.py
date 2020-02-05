@@ -46,7 +46,7 @@ def handle_message(event):
             stock_rt['info']['name'],
             stock_rt['info']['code'],
             my_time)
-        content+='-----\n'
+        content += '-----'
         content+='最近五日價格: \n'
             price5 = stock.price[-5:][::-1]
             date5 = stock.date[-5:][::-1]
