@@ -5,9 +5,11 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import twstock
-import datetime
+#import datetime
 import time
+from datetime import datetime as dt, timedelta
 import calendar
+
 
 
 app = Flask(__name__)
