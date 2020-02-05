@@ -37,8 +37,7 @@ def handle_message(event):
 	elif(text=="機器人"):
 	    reply_text = "叫我嗎"
 	elif(text.startswith('#')):
-	    text=text[1:]
-    content='    '
+	    text=text[1:]#content='    '
 	    stock_rt=twstock.realtime.get(text)
 	    my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
 	    my_time = my_datetime.strftime('%H:%M:%S')
