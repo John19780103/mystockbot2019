@@ -38,7 +38,7 @@ def handle_message(event):
 	    reply_text = "叫我嗎"
 	elif(text.startswith('#')):
 	    text = text[1:]
-		content='    '
+		#content='    '
 		stock_rt = twstock.realtime.get(text)
 		my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
 		my_time = my_datetime.strftime('%H:%M:%S')
