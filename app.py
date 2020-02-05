@@ -6,6 +6,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import twstock
 #import datetime
+import pandas
 import time
 from datetime import datetime as dt, timedelta
 import calendar
