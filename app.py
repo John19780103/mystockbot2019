@@ -39,7 +39,7 @@ def handle_message(event):
 	else:
 	    reply_text = text
 	#message=TextSendMessage(text=event.message.text)
-	message=TextSendMessage(text)
+	message=TextSendMessage(reply_text)
     line_bot_api.reply_message(event.reply_token,message)
 
 import os
