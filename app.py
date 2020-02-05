@@ -38,7 +38,7 @@ def handle_message(event):
 	    reply_text = "叫我嗎"
 	elif(text.startswith('#')):
 	    text=text[1:]
-	    #content='    '
+    content='    '
 	    stock_rt=twstock.realtime.get(text)
 	    my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
 	    my_time = my_datetime.strftime('%H:%M:%S')
@@ -46,7 +46,7 @@ def handle_message(event):
             stock_rt['info']['name'],
             stock_rt['info']['code'],
             my_time)
-        content += '-----'
+    content += '----'
         content+='最近五日價格: \n'
             price5 = stock.price[-5:][::-1]
             date5 = stock.date[-5:][::-1]
