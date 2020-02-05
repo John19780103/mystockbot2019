@@ -48,8 +48,8 @@ def handle_message(event):
 	    stock_rt=twstock.realtime.get(text)
 	    #my_datetime = datetime.fromtimestamp(stock_rt['timestamp']+8*60*60)
 	    #my_time = my_datetime.strftime('%H:%M:%S')
-		my_datetime = dt.fromtimestamp(stock_rt['timestamp']+8*60*60)
-		my_time = my_datetime.strftime('%H:%M:%S')
+	    my_datetime = dt.fromtimestamp(stock_rt['timestamp']+8*60*60)
+	    my_time = my_datetime.strftime('%H:%M:%S')
 	    content += '%s (%s) %s\n' %(
 	        stock_rt['info']['name'],
 	        stock_rt['info']['code'],
