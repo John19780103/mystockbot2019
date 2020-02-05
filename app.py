@@ -49,10 +49,7 @@ def handle_message(event):
         #content+='現價: %s / 開盤: %s\n' %(
         #   stock_rt['realtime']['latest_trade_price'],
         #    stock_rt['realtime']['open'])
-        content += '%s (%s) %s\n' %(
-            stock_rt['realtime']['high'],
-            stock_rt['realtime']['low'])
-        #content += '最高:%s/最低:%s\n'%(
+        #content += '%s (%s) %s\n' %(
         #    stock_rt['realtime']['high'],
         #    stock_rt['realtime']['low'])
         content += '量: %s\n' %(stock_rt['realtime']['accumulate_trade_volume'])
