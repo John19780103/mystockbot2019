@@ -70,7 +70,7 @@ def handle_message(event):
 	    for i in range(len(price5)):
 	        #content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d %H:%M:%S"), price5[i])
 	        content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d"), price5[i])
-	        line_bot_api_8.reply_message(
+	        line_bot_api.reply_message(
 	        event.reply_token,
 	        TextSendMessage(text=content)
 	        )
